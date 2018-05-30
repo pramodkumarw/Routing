@@ -1,0 +1,14 @@
+<section class="w3-container w3-center w3-content" style="max-width:600px"> 
+    <h2 class="w3-wide">Product Edit</h2>
+    <div *ngIf="product" style="background-color:brown;color:white;padding:20px;">
+    id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  type="text" disabled [value]="product.id" > <br>
+    name:<input  type="text" [(ngModel)]="product.name">   <br>
+    desc: &nbsp;<input  type="text" [(ngModel)]="product.desc">   <br>
+   <button (click)="updateData()">Submit</button> <a routerLink="/products">Back</a>
+    </div>
+    <div style="border:1 px;color:black;padding:20px; border-color: black;background: aqua">
+        <router-outlet></router-outlet>
+    </div>
+   </section>
+
+   {{product | json}}
